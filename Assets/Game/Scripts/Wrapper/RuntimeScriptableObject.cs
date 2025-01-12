@@ -6,14 +6,11 @@ namespace BT.ScriptablesObject
     public class RuntimeScriptableObject<T> : ScriptableObject
     {
         private T _value;
-        public T Value
+        public T Value { get { return _value; } set { _value = value; OnChanged?.Invoke(); } }
+        public void UpdateValue(Action<T> updateAction)
         {
-            get => _value;
-            set
-            {
-                _value = value;
-                OnChanged?.Invoke();
-            }
+            updateAction.Invoke(_value);
+            OnChanged?.Invoke();
         }
 
         public event Action OnChanged;

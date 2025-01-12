@@ -18,3 +18,5 @@ MonoBehaviour:
   damage: 0
   moveSpeed: 0
   attackSpeed: 0
+  minimumWave: 5
+  maximumWave: 20
