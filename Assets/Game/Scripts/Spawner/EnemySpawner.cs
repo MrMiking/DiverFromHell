@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private Enemy enemyPrefab;
+    [SerializeField] private Enemy[] enemyPrefab;
 
     public void SpawnEnemy() => enemyPool.Get();
 
@@ -32,7 +32,8 @@ public class EnemySpawner : MonoBehaviour
 
     private Enemy CreateEnemy()
     {
-        Enemy enemy = Instantiate(enemyPrefab);
+        int randomIndex = Random.Range(0, enemyPrefab.Length);
+        Enemy enemy = Instantiate(enemyPrefab[randomIndex]);
         enemy.SetPool(enemyPool);
         return enemy;
     }

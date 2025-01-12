@@ -12,7 +12,7 @@ public class InitState : ISpawnerState
     {
         Debug.Log("Initializing Wave...");
         spawner.rsoWaveData.Value.ResetValues();
-        spawner.rsoWaveData.UpdateValue(data => data.waveNumber += 1);
+        spawner.rsoWaveData.Value.waveNumber += 1;
         spawner.SetState(new SpawningState(spawner));
     }
 

@@ -46,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnEnemyKilled()
     {
-        rsoWaveData.UpdateValue(data => data.enemiesKilled += 1);
+        rsoWaveData.Value.enemiesKilled += 1;
 
         if(rsoWaveData.Value.enemiesKilled >= currentWaveConfig.totalEnemies)
         {

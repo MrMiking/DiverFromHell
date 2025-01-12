@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a2bd2d62d4e2c46aa4f5538d914232, type: 3}
-  m_Name: SSO_BigTank
+  m_Script: {fileID: 11500000, guid: 74f501e76ccb2554da7895128192fe44, type: 3}
+  m_Name: SSO_Player
   m_EditorClassIdentifier: 
-  enemyName: BigTank
-  visual: {fileID: 0}
-  health: 0
-  damage: 0
-  moveSpeed: 0
-  attackSpeed: 0
-  minimumWave: 5
-  maximumWave: 20
+  entityName: Player
+  attackData:
+    attackType: 0
+    bulletPrefab: {fileID: 0}
+    damage: 0
+    cooldown: 0
+    range: 0
