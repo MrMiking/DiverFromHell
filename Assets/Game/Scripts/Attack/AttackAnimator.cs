@@ -15,12 +15,10 @@ public class AttackAnimator : MonoBehaviour
 
     public void AttackCompleted()
     {
-        Debug.Log("Finished");
         Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Prout");
         if(other.gameObject.TryGetComponent(out IDamageable damageable))
         {
             damageable.TakeDamage(attackData.damage);

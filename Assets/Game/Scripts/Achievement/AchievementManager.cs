@@ -3,6 +3,9 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class AchievementManager : MonoBehaviour
 {
+    [Header("References")]
+    public UIManager uiManager;
+
     [Header("SpinToWin")]
     public RSO_SpinToWinCondition spinToWinCondition;
     public SSO_Achievement spinToWinAchievement;
@@ -32,7 +35,8 @@ public class AchievementManager : MonoBehaviour
 
     private void UnlockAchievement(SSO_Achievement achievement)
     {
-        Debug.Log("unlocked");
+        Debug.Log("sdqsd");
         achievement.isUnlocked = true;
+        uiManager.ShowAchievement(achievement);
     }
 }

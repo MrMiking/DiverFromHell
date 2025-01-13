@@ -1,34 +1,16 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 public class UIManager : MonoBehaviour
 {
-    [Header("Settings")]
-
     [Header("References")]
-    [SerializeField] private TextMeshProUGUI waveNumberText;
-    [Space(10)]
-    [SerializeField] private RSO_WaveData waveData;
+    [SerializeField] private TextMeshProUGUI achievementText;
+    [SerializeField] private Animator newAchievementAnimator;
 
-    // RSO
-    // RSF
-    // RSP
-
-    //[Header("Input")]
-    //[Header("Output")]
-
-    private void OnEnable()
+    public void ShowAchievement(SSO_Achievement achievement)
     {
-        waveData.OnChanged += UpdateUI;
-    }
-
-    private void OnDisable()
-    {
-        waveData.OnChanged -= UpdateUI;
-    }
-
-    private void UpdateUI()
-    {
-        Debug.Log("Change");
-        waveNumberText.text = waveData.Value.waveNumber.ToString();
+        achievementText.text = achievement.title;
+        newAchievementAnimator.Play("FadeIn");
     }
 }

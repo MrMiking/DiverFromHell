@@ -17,7 +17,6 @@ public class PlayerHealthUI : MonoBehaviour
 
     public void UpdatePlayerHealthUI()
     {
-        Debug.Log("qshjdqs");
         healthSlider.value = (float)rsoPlayerHealth.Value / (float)ssoPlayerData.health;
     }
 }

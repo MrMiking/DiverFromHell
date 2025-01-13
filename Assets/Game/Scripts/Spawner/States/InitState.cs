@@ -10,7 +10,6 @@ public class InitState : ISpawnerState
 
     public void Enter()
     {
-        Debug.Log("Initializing Wave...");
         spawner.rsoWaveData.Value.ResetValues();
         spawner.rsoWaveData.Value.waveNumber += 1;
         spawner.SetState(new SpawningState(spawner));

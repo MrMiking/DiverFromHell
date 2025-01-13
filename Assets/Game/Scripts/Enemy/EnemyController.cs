@@ -79,7 +79,6 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Attack");
                 Attack();
                 lastAttackTime = Time.time;
             }

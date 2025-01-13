@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         rsoPlayerShooting.Value = true;
 
         float currentRotationAngle = movement.Turret.transform.eulerAngles.y;
-        bool isRotating = Mathf.Abs(currentRotationAngle - lastRotationAngle) > 0.1f;
+        bool isRotating = Mathf.Abs(currentRotationAngle - lastRotationAngle) > 0.01f;
 
         rsoPlayerRotation.Value.isRotating = isRotating;
 
