@@ -61,7 +61,8 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             if (collision.gameObject.TryGetComponent(out IDamageable damageable) && collision.gameObject.CompareTag("Player"))
             {
-                attack.ExecuteAttack(damageable);
+                Debug.Log("Attackkkk");
+                attack.ExecuteAttack(gameObject, damageable);
                 lastAttackTime = Time.time;
             }
         }

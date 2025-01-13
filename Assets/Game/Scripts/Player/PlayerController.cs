@@ -1,5 +1,5 @@
 using UnityEngine;
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     [Header("Settings")]
     [SerializeField] private float currentHealth;

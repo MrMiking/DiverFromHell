@@ -40,6 +40,16 @@ public class PlayerMovement : MonoBehaviour, IMove
         RotateTowardsTarget();
     }
 
+    public void Disable()
+    {
+        
+    }
+
+    public void Enable()
+    {
+
+    }
+
     private void MoveForward()
     {
         transform.position += transform.forward * moveSpeed * Time.deltaTime;

@@ -5,7 +5,8 @@ using UnityEngine;
 public class EntityAttackData
 {
     public AttackType attackType;
-    public GameObject bulletPrefab;
+    public AttackAnimator attackPrefab;
+    public Vector3 attackSpawnPosition;
 
     public float damage;
     public float cooldown;

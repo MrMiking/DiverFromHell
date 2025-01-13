@@ -1,5 +1,5 @@
 using UnityEngine;
 public interface IAttack
 {
-    void ExecuteAttack(IDamageable target);
+    void ExecuteAttack(GameObject attacker, IDamageable target);
 }

@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6216067242856305329}
   - component: {fileID: 7117212507382415804}
   m_Layer: 0
-  m_Name: Grunts
+  m_Name: BigTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   movement: {fileID: 1116654633572708024}
-  entityData: {fileID: 11400000, guid: 04e82c9d6f89e0e4eb026135d6d32bca, type: 2}
+  entityData: {fileID: 11400000, guid: 56247f830a84d664d9cc574286807eb0, type: 2}
   rseOnEnemyKilled: {fileID: 11400000, guid: 8d372852d08eabc428d287c24beabb82, type: 2}
   rsoPlayerTransform: {fileID: 11400000, guid: 0e16cbcef6c06054597c44eecdddca61, type: 2}
 --- !u!195 &6884530496722721189

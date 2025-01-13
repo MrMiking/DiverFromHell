@@ -17,7 +17,9 @@ MonoBehaviour:
   speed: 2
   attackData:
     attackType: 0
-    bulletPrefab: {fileID: 0}
+    attackPrefab: {fileID: 2155207303412381972, guid: a89a2c17683f36f48832789ebcffdfdb,
+      type: 3}
+    attackSpawnPosition: {x: 0, y: 1.5, z: 0}
     damage: 50
     cooldown: 5
     timeToExecute: 0

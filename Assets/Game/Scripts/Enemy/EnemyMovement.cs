@@ -25,6 +25,9 @@ public class EnemyMovement : MonoBehaviour, IMove
         agent.speed = speed;
     }
 
+    public void Enable() { }
+    public void Disable() { }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag != "Player")
