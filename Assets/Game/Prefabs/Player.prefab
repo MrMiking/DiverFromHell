@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &51542918336815287
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6406944680383201696}
-  m_Layer: 0
-  m_Name: BulletSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6406944680383201696
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51542918336815287}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
-  m_LocalScale: {x: 1, y: 2, z: 0.5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2336552710189626199}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1368127670473904138
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +94,6 @@ GameObject:
   - component: {fileID: 5158611435215725561}
   - component: {fileID: 8194033396462962011}
   - component: {fileID: 3367275891092839248}
-  - component: {fileID: 8160098323097266810}
   - component: {fileID: 6647916316466599012}
   - component: {fileID: 3823824959063074847}
   - component: {fileID: 6314842491934727234}
@@ -146,8 +114,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 5.228}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5787337087594598129}
   - {fileID: 2336552710189626199}
@@ -165,18 +133,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c188829ba61284584ca83469f6e422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shooter: {fileID: 8160098323097266810}
+  currentHealth: 0
   movement: {fileID: 3367275891092839248}
   input: {fileID: 6647916316466599012}
   rseOnGameStart: {fileID: 11400000, guid: ad0c862befd202a409c498180fa2cc5a, type: 2}
   rseOnPlayerDeath: {fileID: 11400000, guid: e80f11993ae9df342beec07c69b33195, type: 2}
   rsoPlayerShooting: {fileID: 11400000, guid: 844221a301ba67d4db19b0735ecc90ab, type: 2}
   rsoPlayerRotation: {fileID: 11400000, guid: 74840d7f46a0500438a7f27e602b97d8, type: 2}
-  rsoPlayerHealth: {fileID: 11400000, guid: 36b0ab270b980254dbbfa3e3221bb490, type: 2}
   rsoPlayerTransform: {fileID: 11400000, guid: 0e16cbcef6c06054597c44eecdddca61, type: 2}
-  ssoPlayerData: {fileID: 11400000, guid: eb9acb0a258847049bae000b022ec89f, type: 2}
   canMove: 1
-  canShoot: 1
 --- !u!114 &3367275891092839248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,27 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b12ec3c9eb2b34195e99d7baf0ee53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 5
-  moveSpeed: 10
-  angleTolerance: 90
+  rotationSpeed: 4
+  moveSpeed: 5
+  angleTolerance: 60
   turret: {fileID: 6401773615958739185}
---- !u!114 &8160098323097266810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2463518648642807189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c15c28c35ad0854cbd96dcbe46b824e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8305957309169440232, guid: 99e200dc520446b45a6a8dc2004484d7,
-    type: 3}
-  spawnPoint: {fileID: 6406944680383201696}
-  turret: {fileID: 6401773615958739185}
-  ssoPlayerData: {fileID: 11400000, guid: eb9acb0a258847049bae000b022ec89f, type: 2}
 --- !u!114 &6647916316466599012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +250,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1155588429042449856}
-  - {fileID: 6406944680383201696}
   m_Father: {fileID: 5158611435215725561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1458990980476523815
