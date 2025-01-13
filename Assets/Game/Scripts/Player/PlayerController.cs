@@ -1,10 +1,8 @@
 using UnityEngine;
 public class PlayerController : MonoBehaviour, IDamageable
 {
-    [Header("Settings")]
-    [SerializeField] private float currentHealth;
-
     [Header("References")]
+    [SerializeField] PlayerShooter shooter;
     [SerializeField] PlayerMovement movement;
     [SerializeField] PlayerInput input;
 
@@ -16,16 +14,21 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private RSO_PlayerRotation rsoPlayerRotation;
 
     [Header("RSO")]
+    [SerializeField] private RSO_PlayerHealth rsoPlayerHealth;
     [SerializeField] private RSO_PlayerTransform rsoPlayerTransform;
 
+    [Header("SSO")]
+    [SerializeField] private SSO_EntityData ssoPlayerData;
+
     public bool canMove = false;
+    public bool canShoot = false;
 
     private float lastRotationAngle;
 
     private void OnEnable()
     {
         rseOnGameStart.action += OnGameStart;
-        rseOnPlayerDeath.action -= OnDeath;
+        rseOnPlayerDeath.action += OnDeath;
     }
 
     private void OnDisable()
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void Awake()
     {
         rsoPlayerTransform.Value = transform;
+        rsoPlayerHealth.Value = ssoPlayerData.health;
     }
 
     private void Update()
@@ -47,6 +51,11 @@ public class PlayerController : MonoBehaviour, IDamageable
             movement.Move(input.GetMovementInput());
 
             UpdateSpinData();
+        }
+
+        if (canShoot && input.GetShootInput)
+        {
+            shooter.Shoot();
         }
     }
 
@@ -71,17 +80,26 @@ public class PlayerController : MonoBehaviour, IDamageable
         lastRotationAngle = currentRotationAngle;
     }
 
-    public void TakeDamage(float ammount)
+    public void TakeDamage(int ammount)
     {
-        currentHealth -= ammount;
+        Debug.Log(rsoPlayerHealth.Value);
+        rsoPlayerHealth.Value -= ammount;
 
-        if (currentHealth < 0)
+        if (rsoPlayerHealth.Value < 0)
         {
             rseOnPlayerDeath.Call();
         }
     }
 
-    private void OnGameStart() => canMove = true;
+    private void OnGameStart()
+    {
+        canMove = true;
+        canShoot = true;
+    }
 
-    private void OnDeath() => canMove = false;
+    private void OnDeath()
+    {
+        canMove = false;
+        canShoot = false;
+    }
 }

@@ -5,9 +5,11 @@ using UnityEngine;
 public class SSO_EntityData : ScriptableObject
 {
     [Header("Stats")]
-    public string entityName;
-    public float health;
+    public int health;
     public float speed;
 
-    public EntityAttackData attackData;
+    public AttackAnimator attackAnimation;
+
+    public int damage;
+    public float cooldown;
 }

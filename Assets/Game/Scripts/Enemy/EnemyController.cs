@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Pool;
@@ -9,6 +10,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     [Header("References")]
     [SerializeField] private EnemyMovement movement;
+    [SerializeField] private Transform attackSpawnPoint;
 
     [Header("SSO")]
     [SerializeField] private SSO_EntityData entityData;
@@ -21,8 +23,6 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     private float lastAttackTime;
 
-    public IAttack attack => AttackFactory.CreateAttack(entityData.attackData.attackType, entityData.attackData);
-
     private IObjectPool<EnemyController> enemyPool;
 
 
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         movement.SetSpeed(entityData.speed);
 
         currentHealth = entityData.health;
-        lastAttackTime = -entityData.attackData.cooldown;
+        lastAttackTime = -entityData.cooldown;
     }
 
     private void Update()
@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         enemyPool = pool;
     }
 
-    public void TakeDamage(float ammount)
+    public void TakeDamage(int ammount)
     {
         currentHealth -= ammount;
 
@@ -55,14 +55,26 @@ public class EnemyController : MonoBehaviour, IDamageable
         }
     }
 
+    private void Attack()
+    {
+        Vector3 attackDirection = transform.forward;
+        float attackAngle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg;
+
+        AttackAnimator attackTransform = GameObject.Instantiate(
+        entityData.attackAnimation,
+            attackSpawnPoint.position,
+            transform.rotation);
+        attackTransform.SetAttackData(entityData);
+        attackTransform.onLoop = () => Object.Destroy(attackTransform.gameObject);
+    }
+
     private void OnCollisionStay(Collision collision)
     {
-        if(Time.time - lastAttackTime >= entityData.attackData.cooldown)
+        if(Time.time - lastAttackTime >= entityData.cooldown)
         {
-            if (collision.gameObject.TryGetComponent(out IDamageable damageable) && collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Attackkkk");
-                attack.ExecuteAttack(gameObject, damageable);
+                Attack();
                 lastAttackTime = Time.time;
             }
         }

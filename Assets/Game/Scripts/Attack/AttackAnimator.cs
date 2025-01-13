@@ -6,9 +6,9 @@ public class AttackAnimator : MonoBehaviour
     public delegate void OnLoopDel();
     public OnLoopDel onLoop;
 
-    EntityAttackData attackData;
+    SSO_EntityData attackData;
 
-    public void SetAttackData(EntityAttackData attackData)
+    public void SetAttackData(SSO_EntityData attackData)
     {
         this.attackData = attackData;
     }
@@ -18,7 +18,6 @@ public class AttackAnimator : MonoBehaviour
         Debug.Log("Finished");
         Destroy(gameObject);
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out IDamageable damageable))

@@ -11,7 +11,7 @@ public class RSO_SpinToWinCondition : BT.ScriptablesObject.RuntimeScriptableObje
 
     public void EvaluateCondition()
     {
-        Debug.Log(rsoPlayerShooting + " + " + rsoPlayerRotation.Value.isRotating);
+        Debug.Log(rsoPlayerShooting.Value + " + " + rsoPlayerRotation.Value.isRotating);
         if(rsoPlayerShooting.Value && rsoPlayerRotation.Value.isRotating)
         {
             continuousShootingTime += Time.deltaTime;

@@ -5,19 +5,17 @@ namespace BT.ScriptablesObject
 {
     public class RuntimeScriptableObject<T> : ScriptableObject
     {
-        public event Action OnChanged;
-
-        private T _value;
+        private T _value = default;
         public T Value 
         { 
-            get { 
-                return _value; 
-            } 
+            get => _value;
             set 
-            { 
-                _value = value; 
-                OnChanged?.Invoke(); 
+            {
+                OnChanged?.Invoke();
+                _value = value;
             } 
         }
+
+        public event Action OnChanged;
     }
 }

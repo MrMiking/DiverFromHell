@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour, IMove
     [SerializeField] private GameObject turret;
 
     private Vector3 targetDirection;
+    private SSO_EntityData playerData;
 
     public GameObject Turret => turret;
 
@@ -40,15 +41,9 @@ public class PlayerMovement : MonoBehaviour, IMove
         RotateTowardsTarget();
     }
 
-    public void Disable()
-    {
-        
-    }
+    public void Disable() { }
 
-    public void Enable()
-    {
-
-    }
+    public void Enable() { }
 
     private void MoveForward()
     {
