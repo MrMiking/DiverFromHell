@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/MainMenu.unity
     guid: b37e896b33c03634b806e8ffbf5c03ee
   - enabled: 1
-    path: Assets/Game/Scenes/TimotheeBuilding.unity
+    path: Assets/Game/Scenes/MainScene.unity
     guid: a4934b058ed59bb49852e37d140f4b5d
   m_configObjects: {}
