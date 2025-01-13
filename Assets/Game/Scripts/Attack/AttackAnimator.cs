@@ -20,7 +20,8 @@ public class AttackAnimator : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out IDamageable damageable))
+        Debug.Log("Prout");
+        if(other.gameObject.TryGetComponent(out IDamageable damageable))
         {
             damageable.TakeDamage(attackData.damage);
         }

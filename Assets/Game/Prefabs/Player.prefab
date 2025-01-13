@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5158611435215725561}
   - component: {fileID: 8194033396462962011}
   - component: {fileID: 3367275891092839248}
+  - component: {fileID: 2625853880739133023}
   - component: {fileID: 6647916316466599012}
   - component: {fileID: 3823824959063074847}
   - component: {fileID: 6314842491934727234}
@@ -119,6 +120,7 @@ Transform:
   m_Children:
   - {fileID: 5787337087594598129}
   - {fileID: 2336552710189626199}
+  - {fileID: 5262830870064505818}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8194033396462962011
@@ -133,15 +135,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c188829ba61284584ca83469f6e422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
+  shooter: {fileID: 0}
   movement: {fileID: 3367275891092839248}
   input: {fileID: 6647916316466599012}
   rseOnGameStart: {fileID: 11400000, guid: ad0c862befd202a409c498180fa2cc5a, type: 2}
   rseOnPlayerDeath: {fileID: 11400000, guid: e80f11993ae9df342beec07c69b33195, type: 2}
   rsoPlayerShooting: {fileID: 11400000, guid: 844221a301ba67d4db19b0735ecc90ab, type: 2}
   rsoPlayerRotation: {fileID: 11400000, guid: 74840d7f46a0500438a7f27e602b97d8, type: 2}
+  rsoPlayerHealth: {fileID: 11400000, guid: 36b0ab270b980254dbbfa3e3221bb490, type: 2}
   rsoPlayerTransform: {fileID: 11400000, guid: 0e16cbcef6c06054597c44eecdddca61, type: 2}
+  ssoPlayerData: {fileID: 11400000, guid: eb9acb0a258847049bae000b022ec89f, type: 2}
   canMove: 1
+  canShoot: 0
 --- !u!114 &3367275891092839248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +163,22 @@ MonoBehaviour:
   moveSpeed: 5
   angleTolerance: 60
   turret: {fileID: 6401773615958739185}
+--- !u!114 &2625853880739133023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463518648642807189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c15c28c35ad0854cbd96dcbe46b824e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  spawnPoint: {fileID: 5262830870064505818}
+  turret: {fileID: 6401773615958739185}
+  ssoPlayerData: {fileID: 0}
 --- !u!114 &6647916316466599012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +239,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!1 &5958782898175155282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5262830870064505818}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5262830870064505818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958782898175155282}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5158611435215725561}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6401773615958739185
 GameObject:
   m_ObjectHideFlags: 0

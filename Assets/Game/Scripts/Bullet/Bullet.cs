@@ -22,9 +22,9 @@ public class Bullet : MonoBehaviour
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.TryGetComponent(out IDamageable damageable) && !other.gameObject.CompareTag("Player"))
+        if(other.gameObject.TryGetComponent(out IDamageable damageable) && !other.gameObject.CompareTag("Player"))
         {
             damageable.TakeDamage(damage);
         }

@@ -11,7 +11,7 @@ public class PlayerHealthUI : MonoBehaviour
     [Header("SSO")]
     [SerializeField] private SSO_EntityData ssoPlayerData;
 
-    private void OnEnable() { rsoPlayerHealth.OnChanged += UpdatePlayerHealthUI; }
+    private void OnEnable() => rsoPlayerHealth.OnChanged += UpdatePlayerHealthUI;
 
     private void OnDisable() => rsoPlayerHealth.OnChanged -= UpdatePlayerHealthUI;
 

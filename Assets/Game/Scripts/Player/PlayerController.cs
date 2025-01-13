@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         rseOnPlayerDeath.action -= OnDeath;
     }
 
-    private void Awake()
+    private void Start()
     {
         rsoPlayerTransform.Value = transform;
         rsoPlayerHealth.Value = ssoPlayerData.health;
@@ -82,7 +82,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage(int ammount)
     {
-        Debug.Log(rsoPlayerHealth.Value);
         rsoPlayerHealth.Value -= ammount;
 
         if (rsoPlayerHealth.Value < 0)

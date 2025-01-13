@@ -25,6 +25,11 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     private IObjectPool<EnemyController> enemyPool;
 
+    private void OnEnable()
+    {
+        currentHealth = entityData.health;
+    }
+
 
     private void Awake()
     {
@@ -74,6 +79,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             if (collision.gameObject.CompareTag("Player"))
             {
+                Debug.Log("Attack");
                 Attack();
                 lastAttackTime = Time.time;
             }
