@@ -2187,6 +2187,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerV2
       objectReference: {fileID: 0}
+    - target: {fileID: 6174653719302000409, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
+        type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: cad8145099a07fc45b14a9707a7e9153, type: 3}
+    - target: {fileID: 6174653719302000409, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
+        type: 3}
+      propertyPath: shootCooldown
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6532164720080164087, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
