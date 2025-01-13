@@ -1,30 +1,20 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [Header("Follow Settings")]
-    public Transform target; // Reference to the tank's lower half
-    public Vector3 offset = new Vector3(0, 10, -10); // Offset from the target
-    public float smoothSpeed = 0.125f; // Smoothness factor
+    [Header("Settings")]
+    [SerializeField] private float smoothSpeed;
+    [SerializeField] private Vector3 posOffset;
+
+    [Header("RSO")]
+    [SerializeField] private RSO_PlayerTransform rsoPlayerTransform;
 
     private void LateUpdate()
     {
-        if (target == null)
-        {
-            Debug.LogWarning("CameraFollow: No target assigned!");
-            return;
-        }
+        Vector3 targetPosition = rsoPlayerTransform.Value.position;
+        Vector3 desiredPosition = targetPosition + posOffset;
 
-        // Desired position with offset
-        Vector3 desiredPosition = target.position + offset;
-
-        // Smoothly interpolate towards the desired position
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-
-        // Apply position
-        transform.position = smoothedPosition;
-
-        // Lock rotation to keep Z-axis fixed
-        transform.rotation = Quaternion.Euler(90f, 0f, 0f); // Top-down fixed rotation
+        transform.position = math.lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
     }
 }

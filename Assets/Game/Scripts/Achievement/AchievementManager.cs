@@ -32,7 +32,7 @@ public class AchievementManager : MonoBehaviour
 
     private void UnlockAchievement(SSO_Achievement achievement)
     {
-        Debug.Log("qd");
+        Debug.Log("unlocked");
         achievement.isUnlocked = true;
     }
 }

@@ -15,4 +15,5 @@ MonoBehaviour:
   title: SpinToWin
   description: 
   isUnlocked: 0
+  value: 2
   icon: {fileID: 0}
