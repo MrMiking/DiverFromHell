@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private AudioClip shootSound;     // Sound effect played when shooting
     [SerializeField] private float shootSoundVolume = 1f; // Volume for the shoot sound (0.0 to 1.0)
 
+    public UnityEvent OnFiring;
+
+    public Transform transformAudio;
     private float lastShootTime = 0f; // Tracks the last time the player fired
 
 
@@ -44,7 +48,8 @@ public class PlayerInput : MonoBehaviour
 
         if (shootSound != null)
         {
-            AudioSource.PlayClipAtPoint(shootSound, transform.position, shootSoundVolume);
+            AudioSource.PlayClipAtPoint(shootSound, transformAudio.position, shootSoundVolume);
+            OnFiring.Invoke();
         }
     }
 }
