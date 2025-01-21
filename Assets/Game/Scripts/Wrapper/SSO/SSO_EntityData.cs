@@ -8,8 +8,6 @@ public class SSO_EntityData : ScriptableObject
     public int health;
     public float speed;
 
-    public AttackAnimator attackAnimation;
-
     public int damage;
     public float cooldown;
 }

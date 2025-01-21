@@ -12,6 +12,6 @@ public class PlayerShooter : MonoBehaviour
     public void Shoot()
     {
         Bullet bullet = Instantiate(bulletPrefab, spawnPoint.position, turret.transform.rotation);
-        bullet.SetDamage(ssoPlayerData.damage);
+        bullet.damage = ssoPlayerData.damage;
     }
 }

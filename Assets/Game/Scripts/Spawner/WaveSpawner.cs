@@ -8,13 +8,13 @@ public class WaveSpawner : MonoBehaviour
     [Space(10)]
     [SerializeField] public SSO_WaveConfig currentWaveConfig;
     
-    [Header("Input")] 
+    [Header("RSE")] 
     [SerializeField] private RSE_OnEnemyKilled rseOnEnemyKilled;
 
-    [Header("Output")]
-    [SerializeField] public RSO_WaveData rsoWaveData;
-
+    private int enemyKilled;
     private ISpawnerState currentState;
+
+    public void ResetData() => enemyKilled = 0;
 
     private void OnEnable()
     {
@@ -28,8 +28,6 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
-        rsoWaveData.Value.waveNumber = 0;
-
         SetState(new InitState(this));
     }
 
@@ -46,9 +44,9 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnEnemyKilled()
     {
-        rsoWaveData.Value.enemiesKilled += 1;
+        enemyKilled += 1;
 
-        if(rsoWaveData.Value.enemiesKilled >= currentWaveConfig.totalEnemies)
+        if(enemyKilled >= currentWaveConfig.totalEnemies)
         {
             Debug.Log("Wave completed!");
             SetState(new InitState(this));

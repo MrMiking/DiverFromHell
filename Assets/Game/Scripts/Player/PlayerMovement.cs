@@ -1,5 +1,5 @@
 using UnityEngine;
-public class PlayerMovement : MonoBehaviour, IMove
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float rotationSpeed;
@@ -10,9 +10,8 @@ public class PlayerMovement : MonoBehaviour, IMove
     [SerializeField] private GameObject turret;
 
     private Vector3 targetDirection;
-    private SSO_EntityData playerData;
 
-    public GameObject Turret => turret;
+    public Vector3 GetDirection => targetDirection;
 
     public void MoveTurret()
     {
@@ -28,26 +27,15 @@ public class PlayerMovement : MonoBehaviour, IMove
 
     public void Move(Vector3 direction)
     {
-        if(direction == Vector3.zero)
-        {
-            return;
-        }
+        if(direction == Vector3.zero) return;
 
         targetDirection = direction.normalized;
+
         float angle = Vector3.Angle(transform.forward, targetDirection);
 
-        if (angle <= angleTolerance) MoveForward();
+        if (angle <= angleTolerance) transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
         RotateTowardsTarget();
-    }
-
-    public void Disable() { }
-
-    public void Enable() { }
-
-    private void MoveForward()
-    {
-        transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
     private void RotateTowardsTarget()
