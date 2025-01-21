@@ -6,11 +6,18 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject turret;
 
+    [SerializeField] private float duration = 1.0f;
+    [SerializeField] private float magnitude = 10.0f;
+
     [Header("RSO")]
     [SerializeField] private SSO_EntityData ssoPlayerData;
 
+    [Header("RSE")]
+    [SerializeField] private RSE_PlayShake playShake;
+
     public void Shoot()
     {
+        playShake.Call(duration, magnitude);
         Bullet bullet = Instantiate(bulletPrefab, spawnPoint.position, turret.transform.rotation);
         bullet.damage = ssoPlayerData.damage;
     }

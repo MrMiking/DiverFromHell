@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float lifeTime;
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private Explosion explosion;
     
     [HideInInspector] public int damage;
 
@@ -16,9 +17,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Untagged") || other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy"))
         {
-            if(other.gameObject.TryGetComponent(out IDamageable damageable)) damageable.TakeDamage(damage);
+            Debug.Log("hit");
+            Explosion tempExplosion = Instantiate(explosion, transform.position, Quaternion.identity);
+            tempExplosion.damage = damage;
+
             Destroy(gameObject);
         }
     }

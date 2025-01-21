@@ -2122,6 +2122,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2390132150687769590, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
+        type: 3}
+      propertyPath: duration
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390132150687769590, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
+        type: 3}
+      propertyPath: magnitude
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390132150687769590, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
+        type: 3}
+      propertyPath: playShake
+      value: 
+      objectReference: {fileID: 11400000, guid: bb06e23dccf2f254ea28f0fa71114aa0,
+        type: 2}
     - target: {fileID: 3808373261533221610, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22144,6 +22160,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: playShake
+      value: 
+      objectReference: {fileID: 11400000, guid: bb06e23dccf2f254ea28f0fa71114aa0,
+        type: 2}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: cameraZoom
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: cameraDeZoom
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: cameraMaxZoom
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: cameraMinZoom
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: cameraComponent
+      value: 
+      objectReference: {fileID: 1186459820}
     - target: {fileID: 8150329885909404714, guid: f6f70d88408445d459cf6f8c7c739a9e,
         type: 3}
       propertyPath: m_LocalPosition.x
