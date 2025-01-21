@@ -3,6 +3,13 @@ using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] private RSO_InputShoot inputShoot;
+
+    private void Update()
+    {
+        inputShoot.Value = Input.GetKey(KeyCode.Mouse0);
+    }
+
     public bool GetShootInput => Input.GetKey(KeyCode.Mouse0);
     public Vector3 GetMovementInput()
     {
