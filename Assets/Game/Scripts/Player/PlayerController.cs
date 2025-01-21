@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Windows;
 
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Header("SSO")]
     [SerializeField] private SSO_EntityData playerData;
 
+    private bool canShoot = true;
+
     private void Awake()
     {
         playerHealth.Value = playerData.health;
@@ -26,7 +29,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         movement.MoveTurret();
         movement.Move(input.GetMovementInput());
 
-        if (input.GetShootInput) shooter.Shoot();
+        if (canShoot && input.GetShootInput)
+        {
+            StartCoroutine(ShootCooldwon());
+            shooter.Shoot();
+        }
     }
 
     public void TakeDamage(int ammount)
@@ -37,5 +44,12 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             Debug.Log("Skill Issue");
         }
+    }
+
+    IEnumerator ShootCooldwon()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(playerData.cooldown);
+        canShoot = true;
     }
 }
