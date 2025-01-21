@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7229530101286710461}
   m_Layer: 0
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8860146654434254559}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 100
   lifeTime: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   damage: 0
 --- !u!136 &4516416141981734630
 CapsuleCollider:

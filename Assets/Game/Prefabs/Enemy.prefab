@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 6884530496722721189}
   - component: {fileID: 6216067242856305329}
   m_Layer: 0
-  m_Name: BigTank
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

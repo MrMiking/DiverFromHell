@@ -3,6 +3,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float lifeTime;
+    [SerializeField] private LayerMask layerMask;
     
     [HideInInspector] public int damage;
 
@@ -15,11 +16,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.gameObject.CompareTag("Player") && other.gameObject.TryGetComponent(out IDamageable damageable))
+        if(other.gameObject.CompareTag("Untagged") || other.gameObject.CompareTag("Enemy"))
         {
-            damageable.TakeDamage(damage);
+            if(other.gameObject.TryGetComponent(out IDamageable damageable)) damageable.TakeDamage(damage);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }
