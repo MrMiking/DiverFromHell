@@ -4,23 +4,27 @@ using UnityEngine.UI;
 public class MouseFollower : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private RectTransform uiElement; // The UI element to follow the mouse
-    [SerializeField] private Canvas canvas;          // The canvas containing the UI element
-    [SerializeField] private Vector2 offset;         // Optional offset from the mouse cursor
+    [SerializeField] private RectTransform uiElement;
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private Animator animator;
+    [SerializeField] private RSO_InputShoot inputShoot;
 
-    private void Start()
+    private void OnEnable()
     {
-        // Hide the system cursor
-        Cursor.lockState = CursorLockMode.Confined; // Keep the cursor within the game window
+        inputShoot.OnChanged += ShootCursor;
+
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private void OnDisable()
+    {
+        inputShoot.OnChanged -= ShootCursor;
     }
 
     private void Update()
     {
         Cursor.visible = false;
 
-        if (uiElement == null || canvas == null) return;
-
-        // Convert mouse position to canvas space
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
             Input.mousePosition,
@@ -28,13 +32,17 @@ public class MouseFollower : MonoBehaviour
             out Vector2 localPoint
         );
 
-        // Apply the position and offset
-        uiElement.anchoredPosition = localPoint + offset;
+        uiElement.anchoredPosition = localPoint;
+    }
+
+    private void ShootCursor()
+    {
+        if (inputShoot.Value) animator.Play("Shoot");
+        else animator.Play("Idle");
     }
 
     private void OnDestroy()
     {
-        // Restore the system cursor when the script is destroyed
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
