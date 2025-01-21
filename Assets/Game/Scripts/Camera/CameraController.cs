@@ -6,6 +6,10 @@ public class CameraController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float smoothSpeed = 5.0f;
     [SerializeField] private float distance = 10.0f;
+    [Space(10)]
+    [SerializeField] private float mouseOffsetDistance = 3f;
+    [SerializeField] private float defaultShakeMagnitude = 0.5f;
+    [SerializeField] private float defaultShakeDuration = 0.5f;
 
     [Header("RSO")]
     [SerializeField] private RSO_PlayerTransform rsoPlayerTransform;
