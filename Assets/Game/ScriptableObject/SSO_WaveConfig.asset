@@ -12,11 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a442b953a5e82c646afea981c2949476, type: 3}
   m_Name: SSO_WaveConfig
   m_EditorClassIdentifier: 
-  enemies:
-  - enemy: {fileID: 5469912463384419045, guid: 826d8ad5a4636dd489d3ce7443135e77, type: 3}
-    quantity: 10
-  - enemy: {fileID: 8899232173991667560, guid: 06c879c6121d0b842881a7c3f34d341d, type: 3}
-    quantity: 50
-  totalEnemies: 10
-  spawnInterval: 1
-  enemy: {fileID: 7117239893761651847, guid: 826d8ad5a4636dd489d3ce7443135e77, type: 3}
+  totalEnemies: 50
+  spawnInterval: 0.5

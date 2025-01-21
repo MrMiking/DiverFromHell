@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         movement.MoveTurret();
         movement.Move(input.GetMovementInput());
 
-        if(input.GetShootInput) shooter.Shoot();
+        if (input.GetShootInput) shooter.Shoot();
     }
 
     public void TakeDamage(int ammount)
