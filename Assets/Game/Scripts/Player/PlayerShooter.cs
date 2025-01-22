@@ -2,6 +2,7 @@ using UnityEngine;
 public class PlayerShooter : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private Animator animator;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject turret;
@@ -18,6 +19,7 @@ public class PlayerShooter : MonoBehaviour
 
     public void Shoot()
     {
+        animator.SetTrigger("Shoot");
         playShake.Call(duration, magnitude);
         playFlickerFlash.Call();
         Bullet bullet = Instantiate(bulletPrefab, spawnPoint.position, turret.transform.rotation);

@@ -6,23 +6,12 @@ public class Explosion : MonoBehaviour
 
     [HideInInspector] public int damage;
 
-    private void Awake()
-    {
-        StartCoroutine("ExplosionDelay");
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(damage);
+        Debug.Log("dqfubiqdsghf");
         if (other.TryGetComponent(out IDamageable damageable))
         {
             damageable.TakeDamage(damage);
         }
-    }
-
-    IEnumerator ExplosionDelay()
-    {
-        yield return new WaitForSeconds(0.75f);
-        Destroy(gameObject);
     }
 }

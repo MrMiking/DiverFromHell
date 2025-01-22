@@ -24,10 +24,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         playerTransform.Value = transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         movement.MoveTurret();
         movement.Move(input.GetMovementInput());
+    }
+
+    private void Update()
+    {
+        
 
         if (canShoot && input.GetShootInput)
         {

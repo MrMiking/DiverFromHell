@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 desiredPosition = rsoPlayerTransform.Value.position + new Vector3(0, distance, 0);
 

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float angleTolerance;
 
     [Header("References")]
+    [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject turret;
 
     private Vector3 targetDirection;
@@ -33,7 +34,10 @@ public class PlayerMovement : MonoBehaviour
 
         float angle = Vector3.Angle(transform.forward, targetDirection);
 
-        if (angle <= angleTolerance) transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        if (angle <= angleTolerance)
+        {
+            rb.velocity = transform.forward * moveSpeed;
+        }
 
         RotateTowardsTarget();
     }
