@@ -28,7 +28,7 @@ public class MouseFollower : MonoBehaviour
         onEnemyKilled.action -= KillCursor;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Cursor.visible = false;
 
