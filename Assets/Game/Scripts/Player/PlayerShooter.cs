@@ -14,10 +14,12 @@ public class PlayerShooter : MonoBehaviour
 
     [Header("RSE")]
     [SerializeField] private RSE_PlayShake playShake;
+    [SerializeField] private RSE_PlayFlickerFlash playFlickerFlash;
 
     public void Shoot()
     {
         playShake.Call(duration, magnitude);
+        playFlickerFlash.Call();
         Bullet bullet = Instantiate(bulletPrefab, spawnPoint.position, turret.transform.rotation);
         bullet.damage = ssoPlayerData.damage;
     }
