@@ -12134,6 +12134,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1866410715}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1330982698
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.951
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653065874440438671, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597948826991641464, guid: 99e200dc520446b45a6a8dc2004484d7,
+        type: 3}
+      propertyPath: m_Name
+      value: Bullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99e200dc520446b45a6a8dc2004484d7, type: 3}
 --- !u!4 &1331013396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5090884453457584170, guid: 52eb55ad7d27e9c4f863b02047e293fc,
@@ -22303,37 +22371,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: playShake
-      value: 
-      objectReference: {fileID: 11400000, guid: bb06e23dccf2f254ea28f0fa71114aa0,
-        type: 2}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: cameraZoom
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: cameraDeZoom
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: cameraMaxZoom
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: cameraMinZoom
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: cameraComponent
-      value: 
-      objectReference: {fileID: 1186459820}
     - target: {fileID: 8150329885909404714, guid: f6f70d88408445d459cf6f8c7c739a9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24558,3 +24595,4 @@ SceneRoots:
   - {fileID: 437433984}
   - {fileID: 1549483976}
   - {fileID: 2059571809}
+  - {fileID: 1330982698}

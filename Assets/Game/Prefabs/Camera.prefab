@@ -49,7 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothSpeed: 2
   distance: 30
+  inputShoot: {fileID: 11400000, guid: 5e555786c034741499ad99ce657ff13f, type: 2}
   rsoPlayerTransform: {fileID: 11400000, guid: 0e16cbcef6c06054597c44eecdddca61, type: 2}
+  playShake: {fileID: 11400000, guid: bb06e23dccf2f254ea28f0fa71114aa0, type: 2}
 --- !u!20 &3891740397854172282
 Camera:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     
     [HideInInspector] public int damage;
 
-    private void Start() => Destroy(gameObject, 2);
+    private void Start() => Destroy(gameObject, lifeTime);
 
     private void Update()
     {

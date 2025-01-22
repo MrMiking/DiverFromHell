@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float distance = 10.0f;
 
     [Header("RSO")]
+    [SerializeField] private RSO_InputShoot inputShoot;
     [SerializeField] private RSO_PlayerTransform rsoPlayerTransform;
     [SerializeField] private RSE_PlayShake playShake;
 
