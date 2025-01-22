@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Header("SSO")]
     [SerializeField] private SSO_EntityData playerData;
 
-    private bool canShoot = true;
+    public bool canShoot = true;
 
     private void Awake()
     {

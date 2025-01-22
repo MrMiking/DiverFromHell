@@ -5,6 +5,7 @@ public class CameraController : MonoBehaviour
 {
     [Header("Reference")]
     public Camera mainCamera;
+    public PlayerController playerController;
 
     [Header("Settings")]
     [SerializeField] private float smoothSpeed = 5.0f;
@@ -66,8 +67,7 @@ public class CameraController : MonoBehaviour
 
         if (inputShoot.Value && canDezoom) 
         {
-
-            Debug.Log("Has shoot");
+            Debug.Log("Shoot");
 
             mainCamera.fieldOfView += dezoomFOV;
 
