@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.7924528, g: 0.22801706, b: 0.22801706, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.015
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -20657,8 +20657,8 @@ RectTransform:
   m_GameObject: {fileID: 1710078054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2085369175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22405,6 +22405,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: shakeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
+        type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8150329885909404714, guid: f6f70d88408445d459cf6f8c7c739a9e,
         type: 3}

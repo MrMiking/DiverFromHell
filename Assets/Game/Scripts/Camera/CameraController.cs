@@ -14,6 +14,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float minFOV;
     [SerializeField] private float dezoomFOV;
     [SerializeField] private float zoomSpeed;
+    
+    [Header("SakeCamera")]
+    [SerializeField] private float shakeDuration;
+    [SerializeField] private float shakeMagnitude;
 
     [Header("RSO")]
     [SerializeField] private RSO_InputShoot inputShoot;
@@ -49,7 +53,7 @@ public class CameraController : MonoBehaviour
     private void PlayCameraShake(float duration, float magnitude)
     {
         StopAllCoroutines();
-        StartCoroutine(ShakeCoroutine(duration, magnitude));
+        StartCoroutine(ShakeCoroutine(shakeDuration, shakeMagnitude));
     }
 
     private void Dezoom()
