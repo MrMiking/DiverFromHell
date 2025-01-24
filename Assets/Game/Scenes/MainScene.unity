@@ -1649,152 +1649,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 66483028}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &68500848
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 68500849}
-  - component: {fileID: 68500851}
-  - component: {fileID: 68500850}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &68500849
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68500848}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.044696186, z: -0, w: 0.99900067}
-  m_LocalPosition: {x: 7.7385263, y: 4.6067996, z: 2.4853806}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 553904287}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &68500850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68500848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4503b19f0c746d0479820e66b69dc1ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onPlayerShoot: {fileID: 11400000, guid: c868bc76e7b40364eaa467d8fb232898, type: 2}
-  onEnemyKilled: {fileID: 11400000, guid: 8d372852d08eabc428d287c24beabb82, type: 2}
-  firingSound: {fileID: 8300000, guid: 3ee94db39232f2b4088f0d731437731d, type: 3}
-  explosionSound: {fileID: 8300000, guid: dc53f069b1959dc418ee2b644ee86747, type: 3}
-  AudioSource: {fileID: 68500851}
---- !u!82 &68500851
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68500848}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &69821845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2323,18 +2177,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6390197759411328416, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3808373261533221610, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 68500849}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2259ed8d2db89b54cb66f0b1827ac11c, type: 3}
 --- !u!1 &100327421
@@ -5768,12 +5613,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &553904287 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3808373261533221610, guid: 2259ed8d2db89b54cb66f0b1827ac11c,
-    type: 3}
-  m_PrefabInstance: {fileID: 98456365}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &556003203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 997852375800448173, guid: 26847e50d3a87d345a8373bb84a49c17,
@@ -21273,10 +21112,6 @@ MonoBehaviour:
   minVolume: 0.1
   increaseScaleVolume: 0.09
   soundSpeed: 0.08
-  maxPitch: 1.1
-  minPitch: 1
-  increasePitchVolume: 0.01
-  pitchSpeed: 0.02
   onPlayerShoot: {fileID: 11400000, guid: c868bc76e7b40364eaa467d8fb232898, type: 2}
 --- !u!1001 &1757536209
 PrefabInstance:
@@ -22570,16 +22405,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: dezoomFOV
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506283081525381886, guid: f6f70d88408445d459cf6f8c7c739a9e,
-        type: 3}
-      propertyPath: zoomSpeed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8150329885909404714, guid: f6f70d88408445d459cf6f8c7c739a9e,
         type: 3}

@@ -52,8 +52,8 @@ MonoBehaviour:
   distance: 30
   maxFOV: 80
   minFOV: 25
-  dezoomFOV: 2
-  zoomSpeed: 3
+  dezoomFOV: 1
+  zoomSpeed: 5
   inputShoot: {fileID: 11400000, guid: 5e555786c034741499ad99ce657ff13f, type: 2}
   rsoPlayerTransform: {fileID: 11400000, guid: 0e16cbcef6c06054597c44eecdddca61, type: 2}
   onPlayerShoot: {fileID: 11400000, guid: c868bc76e7b40364eaa467d8fb232898, type: 2}
