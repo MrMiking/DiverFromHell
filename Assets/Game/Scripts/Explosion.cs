@@ -1,13 +1,9 @@
-using System.Collections;
 using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     [SerializeField] private GameObject explosionParticle;
 
     [HideInInspector] public int damage;
-
-    public AudioClip explosioneffect;
-    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -16,7 +12,6 @@ public class Explosion : MonoBehaviour
 
     public void Destroy()
     {
-        audioSource.PlayOneShot(explosioneffect);
         Destroy(gameObject);
     }
 
@@ -27,7 +22,4 @@ public class Explosion : MonoBehaviour
             damageable.TakeDamage(damage);
         }
     }
-
-
-
 }
