@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a442b953a5e82c646afea981c2949476, type: 3}
   m_Name: SSO_WaveConfig
   m_EditorClassIdentifier: 
-  totalEnemies: 10
-  spawnInterval: 1
+  totalEnemies: 100
+  spawnInterval: 0.2

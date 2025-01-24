@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
     
     [Header("RSE")] 
     [SerializeField] private RSE_OnEnemyKilled rseOnEnemyKilled;
+    [SerializeField] private RSE_OnWaveCompleted onWaveCompleted;
 
     private int enemyKilled;
     private ISpawnerState currentState;
@@ -48,7 +49,7 @@ public class WaveSpawner : MonoBehaviour
 
         if(enemyKilled >= currentWaveConfig.totalEnemies)
         {
-            Debug.Log("Wave completed!");
+            onWaveCompleted.Call();
             SetState(new InitState(this));
         }
     }
