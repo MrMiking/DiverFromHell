@@ -6,6 +6,9 @@ public class Explosion : MonoBehaviour
 
     [HideInInspector] public int damage;
 
+    public AudioClip explosioneffect;
+    public AudioSource audioSource;
+
     private void Awake()
     {
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
@@ -13,6 +16,7 @@ public class Explosion : MonoBehaviour
 
     public void Destroy()
     {
+        audioSource.PlayOneShot(explosioneffect);
         Destroy(gameObject);
     }
 
@@ -23,4 +27,7 @@ public class Explosion : MonoBehaviour
             damageable.TakeDamage(damage);
         }
     }
+
+
+
 }
