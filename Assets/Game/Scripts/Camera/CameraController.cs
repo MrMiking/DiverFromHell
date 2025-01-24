@@ -4,14 +4,12 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [Header("Reference")]
-    public Camera mainCamera;
-    public PlayerController playerController;
+    [SerializeField] private Camera mainCamera;
 
     [Header("Settings")]
     [SerializeField] private float smoothSpeed = 5.0f;
     [SerializeField] private float distance = 10.0f;
-
-    [Header("FOV Settings")]
+    [Space(10)]
     [SerializeField] private float maxFOV;
     [SerializeField] private float minFOV;
     [SerializeField] private float dezoomFOV;
@@ -20,19 +18,24 @@ public class CameraController : MonoBehaviour
     [Header("RSO")]
     [SerializeField] private RSO_InputShoot inputShoot;
     [SerializeField] private RSO_PlayerTransform rsoPlayerTransform;
+
+    [Header("RSE")]
+    [SerializeField] private RSE_OnPlayerShoot onPlayerShoot;
     [SerializeField] private RSE_PlayShake playShake;
+
+    private Vector3 velocity = Vector3.zero;
 
     private void OnEnable()
     {
+        onPlayerShoot.action += Dezoom;
         playShake.action += PlayCameraShake;
     }
 
     private void OnDisable()
     {
+        onPlayerShoot.action -= Dezoom;
         playShake.action -= PlayCameraShake;
     }
-
-    private Vector3 velocity = Vector3.zero;
 
     private void FixedUpdate()
     {
@@ -40,8 +43,7 @@ public class CameraController : MonoBehaviour
 
         transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothSpeed * Time.deltaTime);
 
-        Dezoom();
-        ReZoom();
+        if (mainCamera.fieldOfView > minFOV) mainCamera.fieldOfView -= Time.deltaTime * zoomSpeed;
     }
 
     private void PlayCameraShake(float duration, float magnitude)
@@ -50,32 +52,9 @@ public class CameraController : MonoBehaviour
         StartCoroutine(ShakeCoroutine(duration, magnitude));
     }
 
-    private void ReZoom()
-    {
-        if (mainCamera.fieldOfView <= minFOV) 
-        { 
-            mainCamera.fieldOfView = minFOV;
-        }else
-        {
-            mainCamera.fieldOfView -= Time.deltaTime * zoomSpeed;
-        }
-    }
-
     private void Dezoom()
     {
-        bool canDezoom = true;
-
-        if (inputShoot.Value && canDezoom) 
-        {
-            Debug.Log("Shoot");
-
-            mainCamera.fieldOfView += dezoomFOV;
-
-            if(mainCamera.fieldOfView >= maxFOV) mainCamera.fieldOfView = maxFOV;
-
-            canDezoom = false;
-        }
-        else canDezoom = true;
+        if (mainCamera.fieldOfView < maxFOV) mainCamera.fieldOfView += dezoomFOV;
     }
 
     private IEnumerator ShakeCoroutine(float duration, float magnitude)

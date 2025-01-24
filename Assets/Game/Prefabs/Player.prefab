@@ -733,7 +733,9 @@ MonoBehaviour:
   input: {fileID: 6174653719302000409}
   playerHealth: {fileID: 11400000, guid: 36b0ab270b980254dbbfa3e3221bb490, type: 2}
   playerTransform: {fileID: 11400000, guid: 0e16cbcef6c06054597c44eecdddca61, type: 2}
+  onPlayerShoot: {fileID: 11400000, guid: c868bc76e7b40364eaa467d8fb232898, type: 2}
   playerData: {fileID: 11400000, guid: eb9acb0a258847049bae000b022ec89f, type: 2}
+  canShoot: 1
 --- !u!114 &1697733551820907070
 MonoBehaviour:
   m_ObjectHideFlags: 0

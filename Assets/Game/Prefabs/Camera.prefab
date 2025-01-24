@@ -47,10 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1324b409eacd3a4c90cbf7332c8957b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 3891740397854172282}
   smoothSpeed: 2
   distance: 30
+  maxFOV: 80
+  minFOV: 25
+  dezoomFOV: 2
+  zoomSpeed: 3
   inputShoot: {fileID: 11400000, guid: 5e555786c034741499ad99ce657ff13f, type: 2}
   rsoPlayerTransform: {fileID: 11400000, guid: 0e16cbcef6c06054597c44eecdddca61, type: 2}
+  onPlayerShoot: {fileID: 11400000, guid: c868bc76e7b40364eaa467d8fb232898, type: 2}
   playShake: {fileID: 11400000, guid: bb06e23dccf2f254ea28f0fa71114aa0, type: 2}
 --- !u!20 &3891740397854172282
 Camera:
@@ -85,7 +91,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 24.7
+  field of view: 25
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

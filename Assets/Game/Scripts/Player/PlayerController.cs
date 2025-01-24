@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private RSO_PlayerHealth playerHealth;
     [SerializeField] private RSO_PlayerTransform playerTransform;
 
+    [Header("RSE")]
+    [SerializeField] private RSE_OnPlayerShoot onPlayerShoot;
+
     [Header("SSO")]
     [SerializeField] private SSO_EntityData playerData;
 
@@ -32,10 +35,9 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        
-
         if (canShoot && input.GetShootInput)
         {
+            onPlayerShoot.Call();
             StartCoroutine(ShootCooldwon());
             shooter.Shoot();
         }
