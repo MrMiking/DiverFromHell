@@ -18,7 +18,6 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("dqfubiqdsghf");
         if (other.TryGetComponent(out IDamageable damageable))
         {
             damageable.TakeDamage(damage);
